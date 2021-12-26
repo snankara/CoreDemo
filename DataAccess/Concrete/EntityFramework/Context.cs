@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,11 @@ namespace DataAccess.Concrete.EntityFramework
         {
             optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-OUJ8B75;Initial Catalog=CoreDb;Integrated Security=True");
         }
+
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Writer> Writers { get; set; }
     }
 }

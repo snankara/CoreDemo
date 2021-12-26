@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Blog
+    public class Blog : IEntity
     {
         [Key]
         public int BlogId { get; set; }
@@ -17,5 +18,8 @@ namespace Entities.Concrete
         public string BlogImage { get; set; }
         public DateTime BlogCreateDate { get; set; }
         public bool BlogStatus { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }

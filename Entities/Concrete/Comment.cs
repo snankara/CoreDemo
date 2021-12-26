@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Comment
+    public class Comment : IEntity
     {
         [Key]
         public int CommentId { get; set; }
@@ -16,5 +17,7 @@ namespace Entities.Concrete
         public string CommentContent { get; set; }
         public DateTime CommentDate { get; set; }
         public bool CommentStatus { get; set; }
+        public int BlogId { get; set; }
+        public Blog Blog { get; set; }
     }
 }
