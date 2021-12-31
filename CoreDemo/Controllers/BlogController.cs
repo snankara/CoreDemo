@@ -19,5 +19,11 @@ namespace CoreDemo.Controllers
             var blogs = _blogService.GetAllWithCategory();
             return View(blogs);
         }
+
+        public IActionResult BlogDetails(int id)
+        {
+            var blog = _blogService.GetById(id);
+            return View(blog);
+        }
     }
 }
